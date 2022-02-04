@@ -5,8 +5,8 @@ project "IMGUI"
 	systemversion "latest"
 	staticruntime "On"
 
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin/intermediate/" .. outputdir .. "/%{prj.name}")
+	targetdir ("bin/" .. output_dir .. "/%{prj.name}")
+	objdir ("bin/intermediate/" .. output_dir .. "/%{prj.name}")
 
 	files {
 		"imconfig.h",
@@ -27,8 +27,6 @@ project "IMGUI"
 
 	filter "configurations:Debug"
 		runtime "Debug"
-		symbols "on"
 
 	filter "configurations:Release"
 		runtime "Release"
-		optimize "on"
