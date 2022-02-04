@@ -3,7 +3,6 @@ project "IMGUI"
 	language "C++"
 	cppdialect "C++17"
 	systemversion "latest"
-	staticruntime "On"
 
 	targetdir ("bin/" .. output_dir .. "/%{prj.name}")
 	objdir ("bin/intermediate/" .. output_dir .. "/%{prj.name}")
@@ -23,10 +22,12 @@ project "IMGUI"
 	}
 
 	filter "system:linux"
-		pic "On"
+		pic "on"
 
 	filter "configurations:Debug"
 		runtime "Debug"
+        symbols "on"
 
 	filter "configurations:Release"
 		runtime "Release"
+        optimize "on"
